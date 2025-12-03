@@ -1,54 +1,71 @@
-import { ChevronDown } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '-3s' }} />
+    <section className="min-h-screen flex items-center relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-20 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-secondary rounded-full blur-3xl" />
       
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--border)/0.3)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--border)/0.3)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content */}
+          <div className="order-2 lg:order-1">
+            <div className="animate-fade-up">
+              <span className="inline-block px-4 py-1.5 mb-6 text-xs font-medium tracking-widest uppercase text-primary bg-primary/10 rounded-full">
+                BT Uzmanı
+              </span>
+            </div>
+            
+            <h1 className="animate-fade-up delay-100 font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-6">
+              Merhaba,
+              <br />
+              Ben <span className="text-primary">Alperen</span>
+            </h1>
+            
+            <p className="animate-fade-up delay-200 text-lg text-muted-foreground max-w-md mb-10 leading-relaxed">
+              Bilgi Teknolojileri, Siber Güvenlik, Yazılım ve Donanım alanlarında 
+              profesyonel çözümler sunuyorum.
+            </p>
 
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <div className="animate-fade-up">
-          <span className="inline-block px-4 py-2 mb-6 text-sm font-mono text-primary border border-primary/30 rounded-full glass-card">
-            &lt;Bilgi Teknolojileri Uzmanı /&gt;
-          </span>
+            <div className="animate-fade-up delay-300 flex flex-wrap gap-4">
+              <a
+                href="#contact"
+                className="px-8 py-4 bg-primary text-primary-foreground font-medium rounded-full hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
+              >
+                Benimle Çalış
+              </a>
+              <a
+                href="#projects"
+                className="px-8 py-4 border border-border text-foreground font-medium rounded-full hover:bg-secondary transition-all duration-300"
+              >
+                Projeleri Gör
+              </a>
+            </div>
+          </div>
+
+          {/* Right - Abstract Shape */}
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+            <div className="animate-slide-right relative">
+              <div className="w-72 h-72 md:w-96 md:h-96 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent rounded-full flex items-center justify-center">
+                <div className="w-56 h-56 md:w-72 md:h-72 bg-gradient-to-br from-card to-secondary rounded-full flex items-center justify-center shadow-xl">
+                  <span className="font-display text-6xl md:text-8xl text-primary/80">A</span>
+                </div>
+              </div>
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-primary/20 rounded-2xl rotate-12" />
+              <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-secondary rounded-full" />
+            </div>
+          </div>
         </div>
-        
-        <h1 className="animate-fade-up-delay-1 text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          Merhaba, Ben{" "}
-          <span className="text-gradient">Alperen</span>
-        </h1>
-        
-        <p className="animate-fade-up-delay-2 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-          Bilgi Teknolojileri, Siber Güvenlik, Yazılım ve Donanım alanlarında 
-          sorunlarınıza çözüm sunuyor, projelerinize hayat veriyorum.
-        </p>
 
-        <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#contact"
-            className="px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all duration-300 hover:scale-105 animate-pulse-glow"
-          >
-            İletişime Geç
-          </a>
-          <a
-            href="#about"
-            className="px-8 py-4 glass-card text-foreground font-semibold rounded-lg hover:bg-secondary/80 transition-all duration-300 hover:scale-105"
-          >
-            Hakkımda
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-fade-up delay-500">
+          <a href="#about" className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors">
+            <span className="text-xs tracking-widest uppercase mb-2">Keşfet</span>
+            <ArrowDown className="w-5 h-5 animate-bounce" />
           </a>
         </div>
-
-        <a
-          href="#about"
-          className="animate-fade-up-delay-4 inline-block mt-16 text-muted-foreground hover:text-primary transition-colors"
-        >
-          <ChevronDown className="w-8 h-8 animate-bounce" />
-        </a>
       </div>
     </section>
   );

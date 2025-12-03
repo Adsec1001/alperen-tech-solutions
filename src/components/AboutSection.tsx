@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { User, Target, Lightbulb } from "lucide-react";
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,54 +21,53 @@ const AboutSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const cards = [
-    {
-      icon: User,
-      title: "Ben Kimim",
-      description: "Bilişim sektöründe tutkuyla çalışan, sürekli öğrenmeye ve kendini geliştirmeye odaklı bir teknoloji uzmanıyım.",
-    },
-    {
-      icon: Target,
-      title: "Misyonum",
-      description: "BT sorunlarınızı anlayıp, en uygun ve verimli çözümleri sunarak işlerinizi kolaylaştırmak.",
-    },
-    {
-      icon: Lightbulb,
-      title: "Yaklaşımım",
-      description: "Her projeye özgün bakış açısıyla yaklaşıyor, yenilikçi ve sürdürülebilir çözümler üretiyorum.",
-    },
+  const stats = [
+    { number: "5+", label: "Yıl Deneyim" },
+    { number: "50+", label: "Tamamlanan Proje" },
+    { number: "100%", label: "Müşteri Memnuniyeti" },
   ];
 
   return (
     <section
       id="about"
       ref={sectionRef}
-      className="py-24 px-4 relative"
+      className="py-32 px-6 lg:px-12 relative"
     >
-      <div className="max-w-6xl mx-auto">
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <span className="font-mono text-primary text-sm">// Hakkımda</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2">
-            Teknoloji <span className="text-gradient">Tutkusu</span>
-          </h2>
-        </div>
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-5 gap-16 items-start">
+          {/* Left - Label */}
+          <div className={`lg:col-span-2 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+            <span className="text-xs tracking-widest uppercase text-primary font-medium">Hakkımda</span>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold mt-4 leading-tight">
+              Teknolojiye
+              <br />
+              <span className="text-primary">Tutkulu</span>
+            </h2>
+          </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className={`glass-card p-8 rounded-2xl transition-all duration-700 hover:scale-105 hover:border-primary/50 group ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-              style={{ transitionDelay: `${index * 150}ms` }}
-            >
-              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                <card.icon className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{card.description}</p>
+          {/* Right - Content */}
+          <div className={`lg:col-span-3 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              Bilişim sektöründe aktif olarak çalışan bir profesyonelim. 
+              Bilgi Teknolojileri çatısı altındaki sorunlarınıza ve gereksinimlerinize 
+              destek olup, en uygun çözümleri sunmak benim işim.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-12">
+              Kendi geliştirdiğim ve ilgilendiğim yazılım projelerim bulunmakta. 
+              Her projeye özgün bir bakış açısıyla yaklaşıyor, 
+              sürdürülebilir ve verimli çözümler üretiyorum.
+            </p>
+
+            {/* Stats */}
+            <div className="flex flex-wrap gap-12">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <span className="block font-display text-4xl font-semibold text-primary">{stat.number}</span>
+                  <span className="text-sm text-muted-foreground mt-1">{stat.label}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
