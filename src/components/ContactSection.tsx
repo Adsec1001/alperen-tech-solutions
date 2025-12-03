@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Mail, Phone, MapPin, Send, Linkedin, Github, Twitter } from "lucide-react";
+import { Mail, MapPin, Send, Linkedin, Github, Twitter } from "lucide-react";
 
 const ContactSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,12 +22,6 @@ const ContactSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const contactInfo = [
-    { icon: Mail, label: "E-posta", value: "alperen@example.com" },
-    { icon: Phone, label: "Telefon", value: "+90 555 123 4567" },
-    { icon: MapPin, label: "Konum", value: "Türkiye" },
-  ];
-
   const socialLinks = [
     { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: Github, href: "#", label: "GitHub" },
@@ -38,88 +32,105 @@ const ContactSection = () => {
     <section
       id="contact"
       ref={sectionRef}
-      className="py-24 px-4 bg-secondary/30 relative"
+      className="py-32 px-6 lg:px-12 bg-secondary/50 relative"
     >
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <span className="font-mono text-primary text-sm">// İletişim</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2">
-            Benimle <span className="text-gradient">İletişime Geç</span>
-          </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            Projeleriniz veya BT ihtiyaçlarınız için benimle iletişime geçebilirsiniz.
-          </p>
-        </div>
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-20">
+          {/* Left - Info */}
+          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+            <span className="text-xs tracking-widest uppercase text-primary font-medium">İletişim</span>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold mt-4 mb-8">
+              Birlikte
+              <br />
+              <span className="text-primary">Çalışalım</span>
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-12 max-w-md">
+              Projeleriniz veya BT ihtiyaçlarınız için benimle iletişime geçin. 
+              En kısa sürede dönüş yapacağım.
+            </p>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className={`space-y-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '100ms' }}>
-            {contactInfo.map((info, index) => (
-              <div
-                key={index}
-                className="glass-card p-6 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-all hover:scale-[1.02]"
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                  <info.icon className="w-6 h-6 text-primary" />
+            <div className="space-y-6 mb-12">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Mail className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">{info.label}</p>
-                  <p className="font-semibold">{info.value}</p>
+                  <p className="text-sm text-muted-foreground">E-posta</p>
+                  <p className="font-medium">alperen@example.com</p>
                 </div>
               </div>
-            ))}
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <MapPin className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Konum</p>
+                  <p className="font-medium">Türkiye</p>
+                </div>
+              </div>
+            </div>
 
             {/* Social Links */}
-            <div className="flex gap-4 pt-4">
+            <div className="flex gap-4">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
-                  className="w-12 h-12 glass-card rounded-xl flex items-center justify-center hover:bg-primary/20 hover:border-primary/50 transition-all hover:scale-110"
+                  className="w-12 h-12 bg-background border border-border rounded-full flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-5 h-5 text-muted-foreground hover:text-primary" />
+                  <social.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className={`glass-card p-8 rounded-2xl transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '200ms' }}>
-            <form className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium mb-2">İsim</label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors"
-                  placeholder="Adınız Soyadınız"
-                />
+          {/* Right - Form */}
+          <div className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+            <form className="bg-background p-8 md:p-10 rounded-2xl border border-border shadow-sm">
+              <div className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium mb-2">İsim</label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors"
+                      placeholder="Adınız"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Soyisim</label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors"
+                      placeholder="Soyadınız"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">E-posta</label>
+                  <input
+                    type="email"
+                    className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors"
+                    placeholder="ornek@email.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Mesaj</label>
+                  <textarea
+                    rows={5}
+                    className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors resize-none"
+                    placeholder="Mesajınızı yazın..."
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full py-4 bg-primary text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-all flex items-center justify-center gap-2"
+                >
+                  <Send className="w-5 h-5" />
+                  Gönder
+                </button>
               </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">E-posta</label>
-                <input
-                  type="email"
-                  className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors"
-                  placeholder="ornek@email.com"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Mesaj</label>
-                <textarea
-                  rows={4}
-                  className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors resize-none"
-                  placeholder="Mesajınızı yazın..."
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all hover:scale-[1.02] flex items-center justify-center gap-2"
-              >
-                <Send className="w-5 h-5" />
-                Gönder
-              </button>
             </form>
           </div>
         </div>

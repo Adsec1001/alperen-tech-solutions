@@ -22,29 +22,32 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-card border-b border-border/50" : ""
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? "bg-background/90 backdrop-blur-md shadow-sm" : ""
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="#" className="text-xl font-bold">
-          <span className="text-primary">&lt;</span>
-          Alperen
-          <span className="text-primary">/&gt;</span>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex justify-between items-center">
+        <a href="#" className="font-display text-2xl font-semibold tracking-tight">
+          Alperen<span className="text-primary">.</span>
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-muted-foreground hover:text-primary transition-colors relative group"
+              className="text-muted-foreground hover:text-foreground transition-colors text-sm tracking-wide"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
+          <a
+            href="#contact"
+            className="px-5 py-2.5 bg-primary text-primary-foreground text-sm rounded-full hover:opacity-90 transition-opacity"
+          >
+            İletişim
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -58,13 +61,13 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass-card border-t border-border/50 animate-fade-up">
-          <div className="px-4 py-6 space-y-4">
+        <div className="md:hidden bg-background border-t border-border">
+          <div className="px-6 py-6 space-y-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="block text-muted-foreground hover:text-primary transition-colors py-2"
+                className="block text-muted-foreground hover:text-foreground transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
