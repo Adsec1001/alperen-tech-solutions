@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import adsecLogo from "@/assets/adsec-logo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,8 +28,11 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex justify-between items-center">
-        <a href="#" className="font-display text-2xl font-semibold tracking-tight">
-          Alperen<span className="text-primary">.</span>
+        <a href="#" className="flex items-center gap-3">
+          <img src={adsecLogo} alt="Adsec Logo" className="w-10 h-10 object-contain" />
+          <span className="font-display text-2xl font-semibold tracking-tight">
+            Alperen<span className="text-primary">.</span>
+          </span>
         </a>
 
         {/* Desktop Menu */}

@@ -1,4 +1,5 @@
 import { ArrowDown } from "lucide-react";
+import adsecLogo from "@/assets/adsec-logo.png";
 
 const HeroSection = () => {
   return (
@@ -44,12 +45,16 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right - Abstract Shape */}
+          {/* Right - Logo */}
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="animate-slide-right relative">
               <div className="w-72 h-72 md:w-96 md:h-96 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent rounded-full flex items-center justify-center">
-                <div className="w-56 h-56 md:w-72 md:h-72 bg-gradient-to-br from-card to-secondary rounded-full flex items-center justify-center shadow-xl">
-                  <span className="font-display text-6xl md:text-8xl text-primary/80">A</span>
+                <div className="w-56 h-56 md:w-72 md:h-72 bg-gradient-to-br from-card to-secondary rounded-full flex items-center justify-center shadow-xl p-8">
+                  <img 
+                    src={adsecLogo} 
+                    alt="Adsec Logo" 
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               </div>
               {/* Floating Elements */}
