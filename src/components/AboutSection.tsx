@@ -47,14 +47,17 @@ const AboutSection = () => {
 
           {/* Right - Content */}
           <div className={`lg:col-span-3 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Bilişim sektöründe aktif olarak çalışan bir profesyonelim. 
-              Bilgi Teknolojileri çatısı altındaki sorunlarınıza ve gereksinimlerinize 
-              destek olup, en uygun çözümleri sunmak benim işim.
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              Merhaba, ben <span className="text-foreground font-medium">Alperen Dur</span>. ADSEC olarak Bilgi Teknolojileri 
+              alanında profesyonel çözümler sunuyorum. BT Destek, Siber Güvenlik, Yazılım Geliştirme ve Donanım konularında 
+              yılların deneyimiyle müşterilerime güvenilir hizmet veriyorum.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              Teknolojiyi sadece bir meslek olarak değil, bir tutku olarak görüyorum. Her projede en iyi çözümü sunmak 
+              ve müşterilerimin işlerini kolaylaştırmak benim önceliğim.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-12">
-              Kendi geliştirdiğim ve ilgilendiğim yazılım projelerim bulunmakta. 
-              Her projeye özgün bir bakış açısıyla yaklaşıyor, 
+              Kendi geliştirdiğim yazılım projelerim bulunmakta. Her projeye özgün bir bakış açısıyla yaklaşıyor, 
               sürdürülebilir ve verimli çözümler üretiyorum.
             </p>
 
