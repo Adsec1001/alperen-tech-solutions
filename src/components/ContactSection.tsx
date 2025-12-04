@@ -43,7 +43,7 @@ const ContactSection = () => {
               <br />
               <span className="text-primary">Çalışalım</span>
             </h2>
-            <p className="text-sm text-muted-foreground mb-6">Teknolojiye tutkulu</p>
+            <p className="text-sm text-muted-foreground mb-8 md:mb-10">Teknolojiye tutkulu</p>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8 md:mb-12 max-w-md">
               Bilgi Teknolojileri alanında BT Destek, Siber Güvenlik, Yazılım ve Donanım konularında 
               çözüm odaklı çalışıyorum. Projeleriniz veya BT ihtiyaçlarınız için benimle iletişime geçin.
