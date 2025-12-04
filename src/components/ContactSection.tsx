@@ -44,10 +44,19 @@ const ContactSection = () => {
               <span className="text-primary">Çalışalım</span>
             </h2>
             <p className="text-sm text-muted-foreground mb-8 md:mb-10">Teknolojiye tutkulu</p>
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8 md:mb-12 max-w-md">
-              Bilgi Teknolojileri alanında BT Destek, Siber Güvenlik, Yazılım ve Donanım konularında 
-              çözüm odaklı çalışıyorum. Projeleriniz veya BT ihtiyaçlarınız için benimle iletişime geçin.
-            </p>
+            
+            <div className="mb-8 md:mb-12 max-w-md space-y-4">
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+                Merhaba, ben <span className="text-foreground font-medium">Alperen Dur</span>. ADSEC olarak Bilgi Teknolojileri 
+                alanında profesyonel çözümler sunuyorum. BT Destek, Siber Güvenlik, Yazılım Geliştirme ve Donanım konularında 
+                yılların deneyimiyle müşterilerime güvenilir hizmet veriyorum.
+              </p>
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+                Teknolojiyi sadece bir meslek olarak değil, bir tutku olarak görüyorum. Her projede en iyi çözümü sunmak 
+                ve müşterilerimin işlerini kolaylaştırmak benim önceliğim. Projeleriniz veya BT ihtiyaçlarınız için 
+                benimle iletişime geçebilirsiniz.
+              </p>
+            </div>
 
             <div className="space-y-4 md:space-y-6 mb-8 md:mb-12">
               <div className="flex items-center gap-4">
