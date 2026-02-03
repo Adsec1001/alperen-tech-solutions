@@ -55,7 +55,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs md:text-sm text-muted-foreground">E-posta</p>
-                  <p className="font-medium text-sm md:text-base">aa1lperen@outlook.com</p>
+                  <a href="mailto:aa1lperen@outlook.com" className="font-medium text-sm md:text-base hover:text-primary transition-colors">aa1lperen@outlook.com</a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -64,7 +64,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs md:text-sm text-muted-foreground">Telefon</p>
-                  <p className="font-medium text-sm md:text-base">0539 778 40 00</p>
+                  <a href="tel:+905397784000" className="font-medium text-sm md:text-base hover:text-primary transition-colors">0539 778 40 00</a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
