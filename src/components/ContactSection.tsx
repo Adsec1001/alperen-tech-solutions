@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { Mail, MapPin, Send, Linkedin, Instagram, Phone } from "lucide-react";
-import fiverrLogo from "@/assets/fiverr.png";
-import bionlukLogo from "@/assets/bionluk.png";
 
 const ContactSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,11 +25,6 @@ const ContactSection = () => {
   const socialLinks = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/alperen-dur", label: "LinkedIn" },
     { icon: Instagram, href: "https://instagram.com/adsec.co/", label: "Instagram" },
-  ];
-
-  const platformLinks = [
-    { img: fiverrLogo, href: "https://www.fiverr.com/adsec_", label: "Fiverr" },
-    { img: bionlukLogo, href: "https://bionluk.com/adsec", label: "Bionluk" },
   ];
 
   return (
@@ -97,18 +90,6 @@ const ContactSection = () => {
                   aria-label={social.label}
                 >
                   <social.icon className="w-4 h-4 md:w-5 md:h-5" />
-                </a>
-              ))}
-              {platformLinks.map((platform, index) => (
-                <a
-                  key={`platform-${index}`}
-                  href={platform.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center overflow-hidden border border-border hover:scale-110 transition-all"
-                  aria-label={platform.label}
-                >
-                  <img src={platform.img} alt={platform.label} className="w-full h-full object-cover" />
                 </a>
               ))}
             </div>
